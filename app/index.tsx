@@ -1,4 +1,4 @@
-import { Button, Input, SizeTokens, Text, TextArea, View, XStack, YStack, styled } from 'tamagui'
+import { Button, Input, SizeTokens, Spinner, Text, TextArea, View, XStack, YStack, styled } from 'tamagui'
 import { Image } from 'expo-image';
 import { StyleSheet, ToastAndroid } from 'react-native';
 import { Info } from '../components/Popover'
@@ -11,9 +11,11 @@ export default function Index() {
 
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
+    const [status, setStatus] = useState(false);
     const router = useRouter();
 
     const handleGoPress = useCallback(async () => {
+        setStatus(true);
         if (name === '') {
             ToastAndroid.show('Please enter your name', ToastAndroid.SHORT);
             return;
@@ -41,6 +43,7 @@ export default function Index() {
             ToastAndroid.showWithGravity(`${error}`, ToastAndroid.SHORT, ToastAndroid.CENTER)
             return;
         }
+        setStatus(false);
         ToastAndroid.showWithGravity('Welcome to the app', ToastAndroid.SHORT, ToastAndroid.CENTER);
         router.replace('/(signup)/first');
     }, [name, description]);
@@ -64,7 +67,7 @@ export default function Index() {
         </XStack>
         <InputField size="$3" placeholder='Name??' value={name} onChangeText={setName} />
         <TextArea placeholder="What do you do ..." backgroundColor="#0C1F17" borderColor="#133929" color="#257B52" value={description} onChangeText={setDescription} />
-        <Button size="$3" backgroundColor="#113123" onPress={handleGoPress}>Go</Button>
+        <Button icon={status  ? () => <Spinner /> : undefined} size="$3" backgroundColor="#113123" onPress={handleGoPress}>Go</Button>
       </FormContainer>
     </View>
   )

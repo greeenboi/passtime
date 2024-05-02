@@ -1,7 +1,9 @@
 import { Button, Card, H2, Paragraph, XStack, Image, YStack } from 'tamagui'
 import type { Image as IMGType } from 'tamagui'
 import { Circle, Info } from '@tamagui/lucide-icons'
-import { Pressable } from 'react-native'
+import { Pressable, ToastAndroid } from 'react-native'
+import { SheetDemo } from './Sheet'
+import { useState } from 'react'
 export function CardStack({
     children,
 } : {
@@ -25,6 +27,7 @@ export function CardItem({
     pressableClick,
     isVisible,
     url,
+    press,
 } : {
     Heading: string
     Para: string
@@ -33,7 +36,9 @@ export function CardItem({
     isVisible?: boolean
     pressableClick?: () => void
     url: string
+    press: () => void
 }) {
+  
 
   return (
     <Card 
@@ -44,6 +49,7 @@ export function CardItem({
         width={300}
         height={350}
         scale={0.9}
+        onPress={() => ToastAndroid.show('Oooh That tickles... Press me longer', ToastAndroid.SHORT)}
         hoverStyle={{ scale: 0.925 }}
         pressStyle={{ scale: 0.875 }}
         onLongPress={longPress}
@@ -61,12 +67,13 @@ export function CardItem({
             <Pressable onPress={pressableClick} disabled={!isVisible} style={isVisible ? {opacity : 1} : { opacity : 0 }}>
                 <Info />
             </Pressable>
+            
         </XStack>
       </Card.Header>
       <Card.Footer padded alignItems='center' backgroundColor="rgba(13,25,18, 0.3)" >
         
         <XStack flex={1} />
-        <Button borderRadius="$10" marginBottom='10px'>{buttonText}</Button>
+        <Button borderRadius="$10" marginBottom='10px' onPress={press}>{buttonText}</Button>
       </Card.Footer>
       <Card.Background alignContent='center' justifyContent='flex-end'>
         <Image
