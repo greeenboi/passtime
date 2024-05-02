@@ -65,7 +65,7 @@ export default function AgifyApi() {
     
     return(
         <YStack alignItems="center" gap="$8" theme="green">
-        <Button icon={busy  ? () => <Spinner /> : undefined} width={300} height="$4" theme="green" animation="superBouncy" onPress={getAge}>Bored No Longer</Button>
+        <Button icon={busy  ? () => <Spinner /> : undefined} width={300} height="$4" theme="green" animation="superBouncy" onPress={getAge}>Estimate your age</Button>
         
         { content && (
             <Card
