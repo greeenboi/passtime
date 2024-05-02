@@ -1,6 +1,6 @@
 import { Button, Input, SizeTokens, Spinner, Text, TextArea, View, XStack, YStack, styled } from 'tamagui'
 import { Image } from 'expo-image';
-import { StyleSheet, ToastAndroid } from 'react-native';
+import { Pressable, StyleSheet, ToastAndroid } from 'react-native';
 import { Info } from '../components/Popover'
 import { BadgeInfo } from "@tamagui/lucide-icons";
 import { useCallback, useState } from 'react';
@@ -61,9 +61,9 @@ export default function Index() {
       <FormContainer>
         <XStack alignItems='center' display='flex' gap={10} width="full" justifyContent='center'>
             <Text fontSize={15} textAlign='center' fontFamily="$heading">Welcome to the app!</Text>
-            <Info placement="top" Icon={BadgeInfo} Name="Info">
-                <Text fontSize={10} textAlign='center' fontFamily="$heading">This is a simple app to get you started with your day</Text>
-            </Info>
+            <Pressable onPress={() => ToastAndroid.show('Your data is safely NOT with us ;)', 1000)}>
+                <BadgeInfo />
+            </Pressable>
         </XStack>
         <InputField size="$3" placeholder='Name??' value={name} onChangeText={setName} />
         <TextArea placeholder="What do you do ..." backgroundColor="#0C1F17" borderColor="#133929" color="#257B52" value={description} onChangeText={setDescription} />

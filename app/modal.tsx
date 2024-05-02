@@ -1,11 +1,29 @@
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { Button, Text, XStack } from "tamagui";
 import { SheetDemo } from "../components/Sheet";
 import { useState } from "react";
 import { Input } from "tamagui";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { ToastAndroid } from "react-native";
+import { AlertTriangle } from "@tamagui/lucide-icons";
 export default function ModalScreen() {
   const [open, setOpen] = useState(false)
+  const [ busy, setBusy ] = useState(false)
+
+  const router = useRouter();
+
+  const clearUserdata = async() => {
+    setBusy(true)
+    try {
+      await AsyncStorage.removeItem('name')
+      await AsyncStorage.removeItem('description')
+      ToastAndroid.showWithGravity('Data Cleared', ToastAndroid.SHORT, ToastAndroid.CENTER)
+      router.replace('/');
+    } catch (error) {
+      ToastAndroid.showWithGravity(`${error}`, ToastAndroid.SHORT, ToastAndroid.CENTER)
+    }
+    setBusy(false)
+  }
   return (
     <>
       <Link href="/(signup)/first">
@@ -24,6 +42,8 @@ export default function ModalScreen() {
           </XStack>
         }
       />
+
+      <Button onPress={clearUserdata} theme="red"><AlertTriangle />Close</Button>
     </>
   )
 }
