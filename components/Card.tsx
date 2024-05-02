@@ -1,4 +1,4 @@
-import { Button, Card, H2, Paragraph, XStack, Image } from 'tamagui'
+import { Button, Card, H2, Paragraph, XStack, Image, YStack } from 'tamagui'
 import type { Image as IMGType } from 'tamagui'
 import { Circle, Info } from '@tamagui/lucide-icons'
 import { Pressable } from 'react-native'
@@ -51,23 +51,30 @@ export function CardItem({
     >
 
       <Card.Header padded>
-        <H2>{Heading}</H2>
-        <Paragraph theme="green_alt2">{Para}</Paragraph>
+        <XStack alignItems='center' justifyContent='space-between'>
+            <YStack alignItems='flex-start' justifyContent='center' gap={2}>
+                <H2>{Heading}</H2>
+                <Paragraph theme="green_alt2" maxWidth="$16">
+                    {Para} 
+                </Paragraph>
+            </YStack>
+            <Pressable onPress={pressableClick} disabled={!isVisible} style={isVisible ? {opacity : 1} : { opacity : 0 }}>
+                <Info />
+            </Pressable>
+        </XStack>
       </Card.Header>
       <Card.Footer padded alignItems='center' backgroundColor="rgba(13,25,18, 0.3)" >
-        <Pressable onPress={pressableClick} disabled={!isVisible} style={isVisible ? {opacity : 1} : { opacity : 0 }}>
-            <Info />
-        </Pressable>
+        
         <XStack flex={1} />
-        <Button borderRadius="$10">{buttonText}</Button>
+        <Button borderRadius="$10" marginBottom='10px'>{buttonText}</Button>
       </Card.Footer>
       <Card.Background alignContent='center' justifyContent='flex-end'>
         <Image
             resizeMode="contain"
             alignSelf="center"
             source={{
-            width: 250,
-            height: 250,
+            width: 260,
+            height: 260,
             uri: `data:image/png;base64,${url}`,
             }}
         />

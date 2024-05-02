@@ -42,7 +42,7 @@ export function ScrollViewY({
     borderRadius,
 }: {
     children: React.ReactNode
-    height: string
+    height: string | number
     width: string
     backgroundColor: string
     padding: string
@@ -53,10 +53,12 @@ export function ScrollViewY({
 
     <ScrollView
       maxHeight={height}
+      height="99%"
       width={width}
       backgroundColor={backgroundColor}
       padding={padding}
       borderRadius={borderRadius}
+      paddingVertical="110px"
     >
       <YStack  alignItems="center" justifyContent="center">
         {children}
