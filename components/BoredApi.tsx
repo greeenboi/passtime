@@ -25,15 +25,15 @@ export default function BoredAPI () {
   
     return(
       <YStack alignItems="center" gap="$8" theme="green">
-        <Button icon={busy  ? () => <Spinner /> : undefined} width="$18" height="$4" theme="green" onPress={getActivities}>Bored No Longer</Button>
+        <Button icon={busy  ? () => <Spinner /> : undefined} width={300} height="$4" theme="green" onPress={getActivities}>Bored No Longer</Button>
         { content && (
             <Card
                 elevate
                 bordered
                 animation="bouncy"
                 size="$4"
-                width={250}
-                height={300}
+                width={300}
+                height={350}
                 scale={0.9}
                 hoverStyle={{ scale: 0.925 }}
                 pressStyle={{ scale: 0.875 }}
