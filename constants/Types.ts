@@ -8,5 +8,11 @@ type boredAPIType = {
     type : string
 }
 
+type agifyAPIType ={
+    count : number,
+    name : string,
+    age : number,
+}
 
-export default boredAPIType 
+
+export type { boredAPIType, agifyAPIType }
