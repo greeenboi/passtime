@@ -16,6 +16,9 @@ export default function SignUpLayout() {
         setName(myname);
         SplashScreen.hideAsync()
       }
+      else {
+        ToastAndroid.show('Data Missing', 1000);
+      }
     }
 
     getName();

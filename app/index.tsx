@@ -35,10 +35,8 @@ export default function Index() {
             return;
         }
         try {
-            if(!AsyncStorage.getItem('name') && !AsyncStorage.getItem('description')) {
-                await AsyncStorage.setItem('name', name);
-                await AsyncStorage.setItem('description', description);
-            }
+            await AsyncStorage.setItem('name', name);
+            await AsyncStorage.setItem('description', description);
         } catch (error) {
             ToastAndroid.showWithGravity(`${error}`, ToastAndroid.SHORT, ToastAndroid.CENTER)
             return;
