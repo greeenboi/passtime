@@ -28,7 +28,7 @@ export default function AgifyApi() {
         getmyname();
     } , [])
     function countUp ( age : number ){
-        const target = age;
+        const target = age | 63;
         const duration = 1500;
 
         const intervalTime = duration / target;
@@ -48,7 +48,7 @@ export default function AgifyApi() {
         setReveal(false)
         setCount(0)
         try {
-            const url = `https://api.agify.io?name=${myname}&country_id=IN`
+            const url = `https://api.agify.io?name=${myname}`
             console.log(url)
             const response = await fetch(url)
             const data = await response.json()
