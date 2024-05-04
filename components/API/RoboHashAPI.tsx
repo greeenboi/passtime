@@ -132,9 +132,14 @@ export default function RoboHashAPI() {
                                 }}
                             />
                             ) : (
-                            <Pressable onPress={() => {
-                                setReveal(true)
-                            }}>
+                            <Pressable 
+                                onPress={() => {
+                                    setReveal(true)
+                                }}
+                                onLongPress={() => {
+                                    ToastAndroid.show('Share with your friends!', 1000)
+                                }}
+                            >
                                 <Eye size={100} />
                             </Pressable>
                         )}
