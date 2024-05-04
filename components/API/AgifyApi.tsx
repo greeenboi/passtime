@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Card, H2, H3, Image, Input, Spinner, Text, XStack, YStack } from "tamagui";
-import { agifyAPIType } from "../constants/Types";
+import { agifyAPIType } from "../../constants/Types";
 import { Paragraph } from "tamagui";
 import { Eye, Users } from "@tamagui/lucide-icons";
 import { Pressable, ToastAndroid } from "react-native";
@@ -28,7 +28,7 @@ export default function AgifyApi() {
         getmyname();
     } , [])
     function countUp ( age : number ){
-        const target = age | 63;
+        const target = age;
         const duration = 1500;
 
         const intervalTime = duration / target;

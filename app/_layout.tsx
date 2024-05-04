@@ -1,6 +1,6 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
 import { SplashScreen, Stack, useRouter } from 'expo-router'
-import { useColorScheme } from 'react-native'
+import { ToastAndroid, useColorScheme } from 'react-native'
 import { TamaguiProvider } from 'tamagui'
 
 import '../tamagui-web.css'
@@ -9,6 +9,7 @@ import { config } from '../tamagui.config'
 import { useFonts } from 'expo-font'
 import { useEffect, useState } from 'react'
 
+import NetInfo from '@react-native-community/netinfo';
 import * as NavigationBar from 'expo-navigation-bar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -66,17 +67,22 @@ export default function RootLayout() {
     return null
   }
 
-  return <RootLayoutNav hasBeenOnboarded={hasBeenOnboarded} />
+  return <RootLayoutNav />
 }
 
-function RootLayoutNav({
-  hasBeenOnboarded,
-}: {
-  hasBeenOnboarded: boolean
-}) {
+function RootLayoutNav() {
   const colorScheme = useColorScheme()
 
-  
+  useEffect(() => {
+    const unsubscribe = NetInfo.addEventListener(state => {
+      console.log('isreachable: ', state.isInternetReachable);
+      if(!state.isInternetReachable){
+        ToastAndroid.show('Please check your internet connectivity', 2000)
+      }
+    });  
+    
+    unsubscribe();
+  }, [])
 
   return (
     <TamaguiProvider config={config} defaultTheme={colorScheme as any}>
@@ -84,7 +90,7 @@ function RootLayoutNav({
         <Stack>
             <Stack.Screen name="index" options={{ headerShown: false }} />
             <Stack.Screen name="(signup)" options={{ presentation: 'modal', headerShown: false }}  />
-            <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+            <Stack.Screen name="settings" options={{ presentation: 'modal' }} />
         </Stack>
       </ThemeProvider>
     </TamaguiProvider>

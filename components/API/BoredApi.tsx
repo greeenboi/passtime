@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Linking, Pressable, ToastAndroid } from "react-native"
 import { Button, Card, H2, H3, H4, Image, Input, Paragraph, Spinner, Text, XStack, YStack } from "tamagui"
-import { boredAPIType } from "../constants/Types"
+import { boredAPIType } from "../../constants/Types"
 import { Accessibility, IndianRupee, Link, Users, X } from "@tamagui/lucide-icons"
 
 export default function BoredAPI () {

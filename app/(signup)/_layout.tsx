@@ -38,7 +38,7 @@ export default function SignUpLayout() {
           tabBarIcon: ({ color }) => <Text>Fun</Text>,
           headerRight: () => (
             <Pressable onLongPress={() => ToastAndroid.show('stop touching me onisan', 1000)}>
-              <Link href="/modal">
+              <Link href="/settings">
                 <Cog color="$green9Dark" />
               </Link>
             </Pressable>
