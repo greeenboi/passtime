@@ -72,10 +72,6 @@ export default function SecondScreen() {
           minWidth={300}
           gap="$2"
           onSubmit={handleSubmit}
-          borderWidth={1}
-          borderRadius="$4"
-          backgroundColor="$background"
-          borderColor="$borderColor"
           padding="$8"
         >
           <XStack alignItems="center" gap="$4" width="$18">
