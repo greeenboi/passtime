@@ -9471,6 +9471,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lottie-react-native@npm:6.5.1":
+  version: 6.5.1
+  resolution: "lottie-react-native@npm:6.5.1"
+  peerDependencies:
+    "@dotlottie/react-player": ^1.6.1
+    "@lottiefiles/react-lottie-player": ^3.5.3
+    react: "*"
+    react-native: ">=0.46"
+    react-native-windows: ">=0.63.x"
+  peerDependenciesMeta:
+    "@dotlottie/react-player":
+      optional: true
+    "@lottiefiles/react-lottie-player":
+      optional: true
+    react-native-windows:
+      optional: true
+  checksum: 2f3fd7c33092253993e0684c8be5c1114bc457540e6689ab5faf368e471c01ae1ddd2691812297d2705d176b8b4b77c953853bcc65609a0290a5fbbfe305e2b0
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^10.0.1, lru-cache@npm:^9.1.1 || ^10.0.0":
   version: 10.1.0
   resolution: "lru-cache@npm:10.1.0"
@@ -10611,6 +10631,7 @@ __metadata:
     expo-status-bar: "npm:~1.11.1"
     expo-system-ui: "npm:~2.9.3"
     expo-web-browser: "npm:~12.8.2"
+    lottie-react-native: "npm:6.5.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-helmet-async: "npm:~2.0.4"

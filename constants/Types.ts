@@ -14,5 +14,12 @@ type agifyAPIType ={
     age : number,
 }
 
+type genderizeAPIType = {
+    count: number,
+    name: string,
+    gender: string,
+    probability: number
+}
 
-export type { boredAPIType, agifyAPIType }
+
+export type { boredAPIType, agifyAPIType, genderizeAPIType }
