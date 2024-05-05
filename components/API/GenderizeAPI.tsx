@@ -12,7 +12,6 @@ export default function GenderizeAPI() {
     const [ busy, setBusy ] = useState(false);
     const [ content, setContent ] = useState<genderizeAPIType | null>(null);
     const [myname, setMyname] = useState('');
-    const [count, setCount] = useState(0);
     const [ reveal, setReveal ] = useState(false);
 
     const animation = useRef(null);
@@ -30,26 +29,10 @@ export default function GenderizeAPI() {
 
         getmyname();
     } , [])
-    function countUp ( age : number ){
-        const target = age;
-        const duration = 1500;
-
-        const intervalTime = duration / target;
-        const intervalId = setInterval(() => {
-        setCount((prevCount) => {
-            if (prevCount === target) {
-            clearInterval(intervalId);
-            return prevCount;
-            }
-            return prevCount + 1;
-        });
-        }, intervalTime);
-    };
 
     async function getGender() {
         setBusy(true)
         setReveal(false)
-        setCount(0)
         try {
             const url = `https://api.genderize.io?name=${myname}`
             console.log(url)

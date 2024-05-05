@@ -21,5 +21,31 @@ type genderizeAPIType = {
     probability: number
 }
 
+type nationalizeAPIType = {
+    count: number,
+    name: string,
+    country: [
+        {
+            country_id: string,
+            probability: number
+        },
+        {
+            country_id: string,
+            probability: number
+        },
+        {
+            country_id: string,
+            probability: number
+        },
+        {
+            country_id: string,
+            probability: number
+        },
+        {
+            country_id: string,
+            probability: number
+        },        
+    ]
+}
 
-export type { boredAPIType, agifyAPIType, genderizeAPIType }
+export type { boredAPIType, agifyAPIType, genderizeAPIType, nationalizeAPIType }
