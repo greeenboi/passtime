@@ -2,7 +2,7 @@
   "expo": {
     "name": "passtime",
     "slug": "passtime",
-    "owner": "Suvan GS",
+    "owner": "greenarcade",
     "description": "A simple app to pass the time",
     "githubUrl": "https://github.com/greeenboi/passtime",
     "privacy": "public",
@@ -21,13 +21,22 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": false
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Allow $(PRODUCT_NAME) to access your photos.",
+        "NSPhotoLibraryAddUsageDescription": "Allow $(PRODUCT_NAME) to save photos."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#000"
-      }
+      },
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_MEDIA_LOCATION"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -48,6 +57,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "06686477-374b-4f71-b2f5-edd696cc6c93"
+      }
     }
   }
 }
