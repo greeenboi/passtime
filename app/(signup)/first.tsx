@@ -32,7 +32,7 @@ export default function FirstScreen() {
             buttonText='Get a Task'
             longPress={() => {
               Haptics.notificationAsync(
-                Haptics.NotificationFeedbackType.Error
+                Haptics.NotificationFeedbackType.Success
               )
               setOpen(true)
               setContent(
@@ -56,7 +56,7 @@ export default function FirstScreen() {
             pressableClick={() => ToastAndroid.show('This feature may require your Name / Description', ToastAndroid.SHORT)}
             longPress={() => {
               Haptics.notificationAsync(
-                Haptics.NotificationFeedbackType.Error
+                Haptics.NotificationFeedbackType.Success
               )
               setOpen(true)
               setContent(

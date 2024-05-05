@@ -48,9 +48,9 @@ export default function SignUpLayout() {
       <Tabs.Screen
         name="second"
         options={{
-          title: 'Fun Things',
+          title: 'AI Tools',
           href: '/second',
-          tabBarIcon: ({ color }) => <Text>Hello!</Text>,
+          tabBarIcon: ({ color }) => <Text>AI</Text>,
         }}
       />
     </Tabs>
