@@ -1,5 +1,5 @@
 import { Button, Form, H4, Image, Input, Label, Spinner, Text, View, XStack, YStack } from 'tamagui'
-import comingSoon from '../../constants/ImageBase64'
+import { comingSoon } from '../../constants/ImageBase64'
 import { Info, Mail } from '@tamagui/lucide-icons'
 import { useEffect, useState } from 'react'
 import { SheetDemo } from '../../components/Sheet'
