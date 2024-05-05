@@ -1,13 +1,12 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Cog } from '@tamagui/lucide-icons';
-import { Link, SplashScreen, Tabs, useRouter } from 'expo-router'
+import { Link, SplashScreen, Tabs } from 'expo-router'
 import { useEffect, useState } from 'react';
 import { Pressable, ToastAndroid } from 'react-native'
 import { Text } from 'tamagui'
 
 export default function SignUpLayout() {
   const [name, setName] = useState('');
-  const router = useRouter();
   useEffect(() => {
     async function getName() {
       SplashScreen.preventAutoHideAsync()

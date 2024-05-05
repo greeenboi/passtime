@@ -1,5 +1,5 @@
 import React from 'react';
-import { Adapt, Button, Input, Label, Popover, XStack, YStack } from 'tamagui'
+import { Adapt, Button, Popover } from 'tamagui'
 import type { PopoverProps } from 'tamagui'
 
 export function Info({

@@ -1,7 +1,6 @@
 import { Button, Input, SizeTokens, Spinner, Text, TextArea, View, XStack, YStack, styled } from 'tamagui'
 import { Image } from 'expo-image';
 import { Pressable, StyleSheet, ToastAndroid } from 'react-native';
-import { Info } from '../components/Popover'
 import { BadgeInfo } from "@tamagui/lucide-icons";
 import { useCallback, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';

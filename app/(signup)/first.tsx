@@ -15,7 +15,6 @@ import { agifyAPIBanner, boredAPIBanner, genderizeAPIBanner, nationalizeAPIBanne
 export default function FirstScreen() {
   const [open, setOpen] = useState(false)
   const [content, setContent] = useState<string>('')
-  // const [busy, setBusy] = useState(false)
   return (
       
     <View display='flex' alignItems='center' justifyContent='center'>

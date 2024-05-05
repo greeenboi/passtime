@@ -1,4 +1,4 @@
-import { Circle, ScrollView, Square, XStack, YStack } from 'tamagui'
+import { ScrollView, XStack, YStack } from 'tamagui'
 
 export function ScrollViewX({
     children,

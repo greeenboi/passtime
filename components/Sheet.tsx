@@ -1,8 +1,6 @@
-import { ChevronDown, ChevronUp } from '@tamagui/lucide-icons'
-import type { SheetProps } from '@tamagui/sheet'
-import { Sheet, useSheet } from '@tamagui/sheet'
+import { Sheet } from '@tamagui/sheet'
 import { useState } from 'react'
-import { Button, H1, H2, Input, Paragraph, Separator, XStack, YStack } from 'tamagui'
+import { Separator } from 'tamagui'
 
 
 export const SheetDemo = ({

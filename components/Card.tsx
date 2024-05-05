@@ -1,9 +1,6 @@
 import { Button, Card, H2, Paragraph, XStack, Image, YStack } from 'tamagui'
-import type { Image as IMGType } from 'tamagui'
-import { Circle, Info } from '@tamagui/lucide-icons'
+import { Info } from '@tamagui/lucide-icons'
 import { Pressable, ToastAndroid } from 'react-native'
-import { SheetDemo } from './Sheet'
-import { useState } from 'react'
 export function CardStack({
     children,
 } : {
