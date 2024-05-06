@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Button, Card, H2, H3, Image, Input, Spinner, Text, XStack, YStack } from "tamagui";
+import { Button, Card, H2, H3, Image, Spinner, XStack, YStack } from "tamagui";
 import { agifyAPIType } from "../../constants/Types";
 import { Paragraph } from "tamagui";
-import { Eye, Users } from "@tamagui/lucide-icons";
+import { Eye } from "@tamagui/lucide-icons";
 import { Pressable, ToastAndroid } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -117,6 +117,7 @@ export default function AgifyApi() {
                 </Card.Background>
             </Card>
         )}
+        {content && <Paragraph theme="alt2">Info shown may be inaccurate.</Paragraph>}
       </YStack>
     )
 }
