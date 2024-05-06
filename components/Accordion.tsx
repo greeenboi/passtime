@@ -9,8 +9,8 @@ import * as MailComposer from 'expo-mail-composer';
 export function AccordionSettings() {
 
     const [ busy, setBusy ] = useState(false)
-    const [ name, setName ] = useState<string | null>(null)
-    const [ description, setDescription ] = useState<string | null>(null)
+    const [ name, setName ] = useState<string>('')
+    const [ description, setDescription ] = useState<string>('')
     const [ mailContent, setMailContent ] = useState<string | null>(null)
 
     const router = useRouter();
@@ -79,7 +79,8 @@ export function AccordionSettings() {
     const changeName = async() => {
         setBusy(true)
         try{
-            await AsyncStorage.setItem('name', name || '')
+            await AsyncStorage.removeItem('name')
+            await AsyncStorage.setItem('name', name)
             ToastAndroid.showWithGravity('Name Updated', ToastAndroid.SHORT, ToastAndroid.CENTER)
             router.replace('/(signup)/first');
         } catch(error) {
@@ -90,7 +91,8 @@ export function AccordionSettings() {
     const changeDescription = async() => {
         setBusy(true)
         try{
-            await AsyncStorage.setItem('description', description || '')
+            await AsyncStorage.removeItem('description')
+            await AsyncStorage.setItem('description', description)
             ToastAndroid.showWithGravity('Description Updated', ToastAndroid.SHORT, ToastAndroid.CENTER)
             router.replace('/(signup)/first');
         } catch(error) {
