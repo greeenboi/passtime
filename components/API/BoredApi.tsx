@@ -26,7 +26,7 @@ export default function BoredAPI () {
   
     return(
       <YStack alignItems="center" gap="$8" theme="green">
-        <Button icon={busy  ? () => <Spinner /> : undefined} width={300} height="$4" theme="green" onPress={getActivities}>Bored No Longer</Button>
+        <Button icon={busy  ? () => <Spinner /> : undefined} width={300} height="$4" theme="green" onPress={getActivities}>Press to get a random activity</Button>
         { content && (
             <Card
                 elevate
