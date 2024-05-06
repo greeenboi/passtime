@@ -7512,6 +7512,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-network@npm:~5.8.0":
+  version: 5.8.0
+  resolution: "expo-network@npm:5.8.0"
+  peerDependencies:
+    expo: "*"
+  checksum: 4da6d40d05acdfbd552b924eb159ee261e1ab801a6809112958843a4cc279ba92484e1e82942fecba6ec001247c0584fcd54cb7e24dbeb376b4a2774ceb3e430
+  languageName: node
+  linkType: hard
+
 "expo-router@npm:~3.4.7":
   version: 3.4.7
   resolution: "expo-router@npm:3.4.7"
@@ -10625,6 +10634,7 @@ __metadata:
     expo-mail-composer: "npm:~12.7.1"
     expo-media-library: "npm:~15.9.2"
     expo-navigation-bar: "npm:~2.8.1"
+    expo-network: "npm:~5.8.0"
     expo-router: "npm:~3.4.7"
     expo-sharing: "npm:~11.10.0"
     expo-splash-screen: "npm:~0.26.4"

@@ -7,7 +7,8 @@ import '../tamagui-web.css'
 
 import { config } from '../tamagui.config'
 import { useFonts } from 'expo-font'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import * as Network from 'expo-network';
 
 import NetInfo from '@react-native-community/netinfo';
 import * as NavigationBar from 'expo-navigation-bar';
@@ -28,7 +29,6 @@ SplashScreen.preventAutoHideAsync()
 NavigationBar.setBehaviorAsync('overlay-swipe')
 
 export default function RootLayout() {
-  const [hasBeenOnboarded, setHasBeenOnboarded] = useState(true);
   const [interLoaded, interError] = useFonts({
     Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
     InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
@@ -80,7 +80,18 @@ function RootLayoutNav() {
         ToastAndroid.show('Please check your internet connectivity', 2000)
       }
     });  
+
+    const getStuffs = async () => {
+      try {
+        const ip = await Network.getIpAddressAsync();
+        // console.log('ip: ', ip);
+        AsyncStorage.setItem('ip', ip);
+      } catch (error) {
+        console.log('error: ', error);
+      }
+    }
     
+    getStuffs();
     unsubscribe();
   }, [])
 
