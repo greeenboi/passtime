@@ -105,15 +105,18 @@ export default function GenderizeAPI() {
                             <Pressable onPress={() => {
                                 setReveal(true)
                             }}>
-                                <Eye size={100} />
+                                <Eye size={150} />
                             </Pressable>
                         )}
                     </XStack>
                 </Card.Header>
                 <Card.Footer padded justifyContent="space-between" alignItems="center">
-                        {reveal && <Paragraph theme="green_alt2" alignItems="center" justifyContent="center" gap="$2" >
-                            <GaugeCircle  size={12} /> {content.probability}
-                        </Paragraph> }
+                        {reveal && 
+                            <Paragraph theme="green_alt2" alignItems="center" justifyContent="center" gap="$2" >
+                                <GaugeCircle  size={12} /> {content.probability}
+                            </Paragraph> 
+                        }
+                        {reveal && <Paragraph theme="alt2" alignItems="center" justifyContent="center" gap="$2" >{content.gender}</Paragraph>}
                 </Card.Footer>
                     
                 <Card.Background justifyContent="center" alignItems="center">
@@ -130,6 +133,7 @@ export default function GenderizeAPI() {
                 </Card.Background>
             </Card>
         )}
+        {content && <Paragraph theme="alt2">Info shown may be inaccurate.</Paragraph>}
       </YStack>
     )
 }
