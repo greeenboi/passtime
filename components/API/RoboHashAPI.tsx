@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Card, H3, Image, Spinner, XStack, YStack } from "tamagui";
+import { Button, Card, H3, Image, Spinner, Text, XStack, YStack } from "tamagui";
 import * as MediaLibrary from 'expo-media-library';
 import { Paragraph } from "tamagui";
 import { Eye, Share } from "@tamagui/lucide-icons";
@@ -103,7 +103,7 @@ export default function RoboHashAPI() {
     return(
         <YStack alignItems="center" gap="$8" theme="green">
         <Button icon={busy  ? () => <Spinner /> : undefined} width={300} height="$4" theme="green" animation="superBouncy" onPress={getRobot}>Find My Robot!</Button>
-        
+        {content && <Paragraph theme="alt2">Click on the Eye to reveal your Unique Robot</Paragraph> }
         { content && (
             <Card
                 elevate
@@ -117,17 +117,17 @@ export default function RoboHashAPI() {
                 pressStyle={{ scale: 0.875 }}
             >
                 <Card.Header padded gap={4}>
-                    <H3 textAlign="justify" >Hello {myname}</H3>
-                    <Paragraph theme="alt2">Your Robot is...</Paragraph>
-                    <XStack  alignSelf="center" justifyContent="center" backgroundColor="rgba(13,25,18, 0.5)" padding="$2" borderRadius={24} >
+                    <H3 textAlign="justify" >Hi! {myname}</H3>
+                    <Paragraph theme="alt2">Your Unique Robot is...</Paragraph>
+                    <XStack  alignSelf="center" justifyContent="center" backgroundColor="rgba(13,25,18, 0.5)" padding="$1" borderRadius={24} >
                         {reveal ? (
                             <Img
                                 contentFit="contain"
                                 contentPosition="center"
                                 source = {content}
                                 style={{
-                                    width:200,
-                                    height:200
+                                    width:190,
+                                    height:190
                                 }}
                             />
                             ) : (
@@ -144,10 +144,10 @@ export default function RoboHashAPI() {
                         )}
                     </XStack>
                 </Card.Header>
-                <Card.Footer padded justifyContent="space-between" alignItems="center">
-                    <Pressable onPress={() => handleDownload()} >
-                        <Share />
-                    </Pressable>
+                <Card.Footer padded justifyContent="space-between" alignItems="center" paddingTop="$2">
+                    <Button icon={Share} onPress={() => handleDownload()} >
+                        <Text>Share</Text>
+                    </Button>
                 </Card.Footer>
                     
                 <Card.Background justifyContent="center" alignItems="center">
