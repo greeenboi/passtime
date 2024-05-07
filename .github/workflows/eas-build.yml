@@ -20,6 +20,6 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
       - name: Build on EAS
-        run: eas build --platform android --non-interactive --no-wait
+        run: eas build --profile preview --platform android --non-interactive --no-wait
